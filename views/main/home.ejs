@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %> 
+</head>
+<body>
+    <div id="app">
+        <header id="home-header">EJSPassport - Mashup</header>
+        <div id="reg-login-container">
+            <div id="reg-login-prompt">
+                <div id="reg-login-right-col">
+                    <span>
+                        Don't have an
+                        </br>
+                        account?
+                    </span>
+                    </br>
+                <button class="reg-col-btn">Register</button>
+                </div>
+                <div id="reg-login-left-col">
+                    <span>
+                        Have an
+                        </br>
+                        account?
+                    </span>
+                    </br>
+                    <button class="reg-col-btn">Login</button>
+                </div>
+            </div>
+            <div id="reg-login">
+                <form action="/api/v1/ejspassport/login" method="POST">
+                    <div id="login">
+                        <span id="login-txt">LOGIN</span>
+                        <% if (error) { %>
+                            <p><%=error%></p>
+                        <% } %>
+                        <input type="text" class="inputs" name="email" placeholder="Email">
+                        <input type="password" class="inputs" name="password" placeholder="Password">
+                        <div>
+                            <span id="forgot-pass-txt">Forgot Password?</span>
+                            <button id="login-btn" type="submit">LOGIN</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="/javascript/main.js"></script>
+</body>
+</html>

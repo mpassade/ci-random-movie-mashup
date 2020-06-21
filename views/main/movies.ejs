@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %> 
+</head>
+<body>
+    <div id='app'>
+        <header>Movies Now Playing</header>
+        <div id="movies-container">
+            <% movies.forEach(item => { %>
+                <div id="movie-profile">
+                    <img id='movie-pic' src= <%= posterBasePath + item.poster_path %> >
+                    <div id="movie-info">
+                        <p id="movie-title"><%= item.title %>
+                        <p><%= item.overview %>
+                    </div>
+                    
+                </div>
+            <% }) %>
+            </div>
+        <footer>
+            <%- include('../partials/footer.ejs') %> 
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %> 
+</head>
+<body>
+    <div id="app">
+        <header>Random Users</header>
+        <div id="users-container">
+            <% users.forEach(item => { %>
+                <div id="user-profile">
+                    <img id='user-pic' src= <%= item.picture.thumbnail %> >
+                    <p><%= item.name.first %> <%= item.name.last %></p>
+                </div>
+            <% }) %>
+            </div>
+        <footer>
+            <%- include('../partials/footer.ejs') %> 
+        </footer>
+    </div>
+</body>
+</html>

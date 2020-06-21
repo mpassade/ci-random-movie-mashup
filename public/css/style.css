@@ -1,0 +1,173 @@
+html, body {
+    position: relative;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+#app {
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 50px;
+    background: -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%),
+                -webkit-linear-gradient(45deg, #092756 0%, #670d10 100%);
+}
+header {
+    text-align: center;
+    color: white;
+    font-size: 80px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#home-header {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    padding-top: 40px;
+}
+#reg-login-container {
+    position: relative;
+    height: 450px;
+    width: 1000px;
+    margin: auto;
+    margin-top: 120px;
+}
+#reg-login-prompt {
+    position: absolute;
+    top: 50px;
+    height: 350px;
+    width: 1000px;
+    background-color: rgb(42, 42, 42);
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 350px;
+}
+#reg-login-left-col {
+    grid-column: 1 / span 1;
+    color: white;
+    font-size: 35px;
+    grid-row: 1 / span 1;
+    padding-top: 70px;
+    padding-left: 50px;
+}
+#reg-login-right-col {
+    grid-column: 2 / span 1;
+    color: white;
+    font-size: 35px;
+    grid-row: 1 / span 1;
+    padding-top: 70px;
+    padding-left: 200px;
+}
+.reg-col-btn {
+    width: 150px;
+    height: 30px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(42, 42, 42);
+    border: 1px solid white;
+}
+#reg-login {
+    height: 450px;
+    width: 450px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 50px;
+}
+#login {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    
+}
+#login-txt {
+    font-size: 32px;
+}
+.inputs {
+    height: 40px;
+}
+#forgot-pass-txt {
+    color: green;
+}
+#login-btn {
+    width: 120px;
+    height: 40px;
+    font-size: 12px;
+    color: white;
+    background-color: rgb(83, 83, 83);
+    border: 1px solid rgb(83, 83, 83);
+    float: right;
+}
+#users-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 50px;
+}
+#movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 50px;
+    background-color: rgb(42, 42, 42);
+}
+#user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+    background-color: rgb(42, 42, 42);
+    margin: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+#movie-profile {
+    display: flex;
+    height: 300px;
+    width: 420px;
+    background-color: white;
+    margin: 20px;
+}
+#user-pic {
+    border-radius: 50%;
+    height: 130px;
+    width: 130px;
+    padding-top: 20px;
+}
+#movie-pic {
+    height: 300px;
+    width: 180px;
+}
+#movie-info {
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    overflow: scroll;
+}
+#movie-title {
+    font-weight: bold;
+}
+#copyright {
+    height: 15px;
+    width: 15px;
+}
+footer {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    padding-left: 10px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
