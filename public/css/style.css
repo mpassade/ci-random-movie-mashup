@@ -19,7 +19,7 @@ header {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-#home-header {
+#home-header, #choose-api-header {
     text-align: center;
     color: white;
     font-size: 50px;

@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser')
 const morgan = require('morgan')
 const session = require('express-session')
 const passport = require('passport')
-const {check, validationResult} = require('express-validator')
 const MongoStore = require('connect-mongo')(session)
 
 require('dotenv').config()
@@ -45,6 +44,7 @@ app.use(flash())
 app.use(passport.initialize());
 app.use(passport.session());
 app.use((req, res, next) => {
+  res.locals.user = req.user
   res.locals.errors = req.flash('errors')
   next()
 })
@@ -63,11 +63,7 @@ mongoose.connect(process.env.MONGODB_URI, {
   console.log(`MongoDB Error: ${err}`)
 })
 
-app.get('/', (req, res) => {
-  
-  res.render('main/home')
-})
-
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
 })
+
