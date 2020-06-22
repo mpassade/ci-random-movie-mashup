@@ -2,9 +2,11 @@ const express = require('express')
 const router = express.Router()
 const passport = require('passport')
 const {
-    movies, random, home, login, register, choose, loginCheck,
-    validateLogInput, validateRegInput, regCheck, loginValidate
+    movies, random, home, logout, register, choose
 } = require('../controllers/thirdPartyController.js')
+const {
+    loginCheck, validateLogInput, validateRegInput, regCheck, loginValidate
+} = require('../middleware/middleware.js')
 
 router.get('/movies', movies)
 router.get('/random', random)
@@ -25,5 +27,6 @@ router.post(
     loginValidate,
     register)
 router.get('/choose-api', choose)
+router.get('/logout', logout)
 
 module.exports = router

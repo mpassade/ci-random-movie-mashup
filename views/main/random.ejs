@@ -5,7 +5,14 @@
 </head>
 <body>
     <div id="app">
-        <header>Random Users</header>
+        <header id="random-header">Random Users</header>
+        <p class="app-par-1">
+            <a class="app-links" href="/api/v1/ejspassport/choose-api">Options</a> | 
+            <a class="app-links" href="/api/v1/ejspassport/logout">Logout</a>
+        </p>
+        <p class="app-par-2">
+            Logged in as: <%= user.name %>
+        </p>
         <div id="users-container">
             <% users.forEach(item => { %>
                 <div id="user-profile">

@@ -6,8 +6,26 @@
 <body>
     <div id="app">
         <header id="choose-api-header">Choose Your API</header>
-        <span>Logged in as: <%= req.user %> | </span>
-
+        <p id="api-par">
+            Logged in as: <%= user.name %> |
+            <a id="logout-link" href="/api/v1/ejspassport/logout">Logout</a>
+        </p>
+        <div id="apis">
+            <div class="apis-sub-container">
+                <a href="/api/v1/ejspassport/movies">
+                    <img class="api-pic" src="/images/movies.png" alt="Movies Image">
+                </a>
+                <p class="api-txt-large">Now Playing</p>
+                <p class="api-txt-small">Checkout a listing of movies now playing near you.</p>
+            </div>
+            <div class="apis-sub-container">
+                <a href="/api/v1/ejspassport/random">
+                    <img class="api-pic" src="/images/random.png" alt="Random Users Image">
+                </a>
+                <p class="api-txt-large">Random Users</p>
+                <p class="api-txt-small">See an alphabetical list of random users.</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

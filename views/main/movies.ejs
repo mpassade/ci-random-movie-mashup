@@ -5,7 +5,14 @@
 </head>
 <body>
     <div id='app'>
-        <header>Movies Now Playing</header>
+        <header id="movie-header">Here is a list of Movies Now Playing in Theatres</header>
+        <p class="app-par-1">
+            <a class="app-links" href="/api/v1/ejspassport/choose-api">Options</a> | 
+            <a class="app-links" href="/api/v1/ejspassport/logout">Logout</a>
+        </p>
+        <p class="app-par-2">
+            Logged in as: <%= user.name %>
+        </p>
         <div id="movies-container">
             <% movies.forEach(item => { %>
                 <div id="movie-profile">
