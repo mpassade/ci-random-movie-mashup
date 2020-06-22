@@ -31,8 +31,8 @@
                 <form action="/api/v1/ejspassport/login" method="POST">
                     <div id="login">
                         <span id="login-txt">LOGIN</span>
-                        <% if (error) { %>
-                            <p><%=error%></p>
+                        <% if (errors.length > 0) { %>
+                            <%=errors%>
                         <% } %>
                         <input type="text" class="inputs" name="email" placeholder="Email">
                         <input type="password" class="inputs" name="password" placeholder="Password">

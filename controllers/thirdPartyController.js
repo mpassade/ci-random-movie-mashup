@@ -1,6 +1,7 @@
 const User = require('../models/user.js')
 const bcrypt = require('bcryptjs')
 
+
 module.exports = {
     random: (req, res) => {
         const url = 'https://randomuser.me/api/?results=20'
@@ -42,7 +43,8 @@ module.exports = {
     register: (req, res) => {
         const {name, email, password} = req.body
         if (!name || !email || !password){        
-            res.render('main/home', {error: 'All fields are required'})
+            req.flash('errors', 'All fields are required')
+            res.redirect('/api/v1/ejspassport/home')
         }
         // User.findOne({email: req.body.email})
         // .then(user => {

@@ -3,7 +3,6 @@ const app = express()
 const path = require('path')
 const mongoose = require('mongoose')
 const flash = require('connect-flash')
-const bcrypt = require('bcryptjs')
 const cookieParser = require('cookie-parser')
 const morgan = require('morgan')
 const session = require('express-session')
@@ -12,6 +11,7 @@ const {check, validationResult} = require('express-validator')
 const MongoStore = require('connect-mongo')(session)
 
 require('dotenv').config()
+require('./lib/passport.js')
 
 const router = require('./routes/routes.js')
 
@@ -23,7 +23,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/api/v1/ejspassport', router)
 
 app.use(
   session({
@@ -42,6 +41,16 @@ app.use(
   })
 );
 
+app.use(flash())
+app.use(passport.initialize());
+app.use(passport.session());
+app.use((req, res, next) => {
+  res.locals.errors = req.flash('errors')
+  next()
+})
+
+app.use('/api/v1/ejspassport', router)
+
 const port = process.env.PORT || 8000
 
 mongoose.connect(process.env.MONGODB_URI, {
@@ -52,6 +61,11 @@ mongoose.connect(process.env.MONGODB_URI, {
   console.log('MongoDB Connected')
 }).catch(err => {
   console.log(`MongoDB Error: ${err}`)
+})
+
+app.get('/', (req, res) => {
+  
+  res.render('main/home')
 })
 
 app.listen(port, () => {
